@@ -34,6 +34,8 @@ public class HomeController {
 
                 FXMLLoader loader = new FXMLLoader(getClass().getResource("CourseEntry.fxml"));
                 Parent root = loader.load();
+                CourseEntryController controller = loader.getController();
+                controller.setUserName(name);
 
                 Stage stage = (Stage) startButton.getScene().getWindow();
                 stage.setScene(new Scene(root));

@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane stylesheets="@Style.css" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example._207011_sulaiman_cgpa_builder.GpaSummaryController">
+
+    <top>
+        <VBox alignment="CENTER" spacing="5" style="-fx-background-color: #1976d2; -fx-border-color: #1565c0; -fx-border-width: 0 0 1 0;">
+            <padding>
+                <Insets bottom="8" left="12" right="12" top="8" />
+            </padding>
+            <Label style="-fx-font-size: 18; -fx-font-weight: bold; -fx-text-fill: white;" text="GPA Certificate" />
+            <Text style="-fx-font-size: 9; -fx-fill: #e3f2fd;" text="Your academic achievement">
+                <font>
+                    <Font size="16.0" />
+                </font>
+            </Text>
+        </VBox>
+    </top>
+
+    <center>
+        <ScrollPane style="-fx-background-color: #ffffff;">
+            <VBox spacing="12" style="-fx-background-color: #ffffff;">
+                <padding>
+                    <Insets bottom="12" left="12" right="12" top="12" />
+                </padding>
+
+                <VBox alignment="CENTER" spacing="12" style="-fx-background-color: linear-gradient(to bottom, #fffacd, #fff9e6); -fx-border-color: #ffd700 #daa520 #daa520 #ffd700; -fx-border-width: 5; -fx-border-radius: 8; -fx-padding: 25;">
+
+                    <Label style="-fx-font-size: 16; -fx-font-weight: bold; -fx-text-fill: #1a1a1a;" text="Certificate of Achievement" />
+
+                    <Separator style="-fx-border-width: 1 0 0 0; -fx-border-color: #daa520;" />
+
+                    <VBox alignment="CENTER" spacing="3">
+                        <Text style="-fx-font-size: 11; -fx-fill: #555; -fx-font-style: italic;" text="Awarded To" />
+                        <Label fx:id="certificateNameLabel" style="-fx-font-size: 20; -fx-font-weight: bold; -fx-text-fill: #1976d2;" text="Student" />
+                    </VBox>
+
+                    <VBox alignment="CENTER" spacing="2">
+                        <Text style="-fx-font-size: 10; -fx-fill: #666;" text="For Completing" />
+                        <Label fx:id="targetCreditsLabel" style="-fx-font-size: 16; -fx-font-weight: bold; -fx-text-fill: #d32f2f;" text="12" />
+                        <Text style="-fx-font-size: 10; -fx-fill: #666;" text="Credit Hours" />
+                    </VBox>
+
+                    <VBox alignment="CENTER" spacing="4" style="-fx-padding: 10; -fx-background-color: rgba(25, 118, 210, 0.1); -fx-border-radius: 6;">
+                        <Text style="-fx-font-size: 11; -fx-font-weight: bold; -fx-fill: #333;" text="Final GPA" />
+                        <Label fx:id="gpaLabel" style="-fx-font-size: 32; -fx-font-weight: bold; -fx-text-fill: #f57f17;" text="0.00" />
+                    </VBox>
+
+                    <Separator style="-fx-border-width: 1 0 0 0; -fx-border-color: #333; -fx-padding: 8 0 3 0;" />
+                    <Text style="-fx-font-size: 9; -fx-fill: #666;" text="Accredited by Md Sulaiman" textAlignment="CENTER">
+                        <font>
+                            <Font size="14.0" />
+                        </font>
+                    </Text>
+                </VBox>
+
+                <VBox spacing="6">
+                    <Label style="-fx-font-size: 11; -fx-font-weight: bold; -fx-text-fill: #1976d2;" text="Course Details" />
+                    <TableView fx:id="gpaTable" prefHeight="180" style="-fx-font-size: 9;" styleClass="summary-table">
+                        <columns>
+                            <TableColumn fx:id="nameCol" prefWidth="100" text="Name" />
+                            <TableColumn fx:id="codeCol" prefWidth="60" text="Code" />
+                            <TableColumn fx:id="creditCol" prefWidth="40" text="Cr" />
+                            <TableColumn fx:id="teacher1Col" prefWidth="80" text="Teacher 1" />
+                            <TableColumn fx:id="teacher2Col" prefWidth="80" text="Teacher 2" />
+                            <TableColumn fx:id="gradeCol" prefWidth="50" text="Grade" />
+                        </columns>
+                    </TableView>
+                </VBox>
+            </VBox>
+        </ScrollPane>
+    </center>
+
+    <bottom>
+        <HBox alignment="CENTER_RIGHT" spacing="10" style="-fx-background-color: #f5f5f5; -fx-border-color: #ddd; -fx-border-width: 1 0 0 0;">
+            <padding>
+                <Insets bottom="8" left="12" right="12" top="8" />
+            </padding>
+            <Button fx:id="backButton" style="-fx-padding: 6 15 6 15; -fx-font-size: 10;" text="Back" />
+        </HBox>
+    </bottom>
+</BorderPane>
